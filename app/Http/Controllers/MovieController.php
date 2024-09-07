@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Movie\StoreMovieRequest;
+use App\Http\Requests\Movie\UpdateMovieRequest;
 use App\Models\Movie;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+
 
 
 class MovieController extends Controller
@@ -21,7 +24,7 @@ class MovieController extends Controller
         return new JsonResponse($movie);
     }
 
-    public function store(Request $request): JsonResponse
+    public function store(StoreMovieRequest $request): JsonResponse
     {
         Movie::create([
             'title' => $request->title,
@@ -31,11 +34,11 @@ class MovieController extends Controller
             'status' => $request->status
         ]);
         return new JsonResponse([
-            'message' => 'Create Movie Succesful'
+            'message' => 'Insert Movie Succesful'
         ]);
     }
 
-    public function update(Movie $movie, Request $request): JsonResponse
+    public function update(Movie $movie, UpdateMovieRequest $request): JsonResponse
     {
         $movie->update([
             'title' => $request->title,
@@ -45,13 +48,13 @@ class MovieController extends Controller
             'status' => $request->status
         ]);
         return new JsonResponse([
-            'message' => 'Create Movie Succesful'
+            'message' => 'Update Movie Succesful'
         ]);
     }
 
     public function delete(Movie $movie): JsonResponse
     {
         $movie->delete();
-        return new JsonResponse(['message' => 'Profile deleted successfully']);
+        return new JsonResponse(['message' => 'Delete Movie successfully']);
     }
 }
