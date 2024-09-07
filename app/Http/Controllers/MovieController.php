@@ -31,7 +31,7 @@ class MovieController extends Controller
             'gender' => $request->gender,
             'time' => $request->time,
             'premiere' => $request->premiere,
-            'status' => $request->status
+            'status_id' => $request->status_id
         ]);
         return new JsonResponse([
             'message' => 'Insert Movie Succesful'
@@ -45,7 +45,7 @@ class MovieController extends Controller
             'gender' => $request->gender,
             'time' => $request->time,
             'premiere' => $request->premiere,
-            'status' => $request->status
+            'status_id' => $request->status_id
         ]);
         return new JsonResponse([
             'message' => 'Update Movie Succesful'

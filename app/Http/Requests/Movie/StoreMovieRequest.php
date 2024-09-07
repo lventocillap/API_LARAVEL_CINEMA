@@ -26,7 +26,7 @@ class StoreMovieRequest extends FormRequest
             'gender' => ['required', 'string', 'max:20'],
             'time' => ['required', 'date_format:H:i'],
             'premiere' => ['required', 'date_format:Y-m-d'],
-            'status' =>['required', 'boolean']
+            'status_id' =>['required', 'exists:movie_statuses,id']
         ];
     }
 }

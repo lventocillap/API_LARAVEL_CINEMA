@@ -15,6 +15,11 @@ class Movie extends Model
         'gender',
         'time',
         'premiere',
-        'status'
+        'status_id'
     ];
+
+    public function Movie_statuses()
+    {
+        return $this->hasOne(Movie_statuses::class);
+    }
 }
