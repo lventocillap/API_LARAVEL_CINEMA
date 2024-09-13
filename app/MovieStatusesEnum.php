@@ -4,7 +4,7 @@ namespace App;
 
 enum MovieStatusesEnum:string
 {
-    case Cartelera = 'Cartelera';
+    case Cartelera = 'Estreno';
     case Proximamente = 'Proximamente';
     case Relanzamiento = 'Relanzamiento';
 }

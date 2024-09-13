@@ -18,8 +18,8 @@ class Movie extends Model
         'status_id'
     ];
 
-    public function Movie_statuses()
+    public function movieStatus()
     {
-        return $this->hasOne(Movie_statuses::class);
+        return $this->belongsTo(Movie_statuses::class, 'status_id');
     }
 }

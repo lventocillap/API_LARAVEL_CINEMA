@@ -12,4 +12,9 @@ class Movie_statuses extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function Movie()
+    {
+        return $this->hasMany(Movie::class, 'status_id');
+    }
 }
